@@ -1,21 +1,21 @@
-//import Footer from "../../components/Footer";
+import Background from "../components/Background";
 import Header from "../components/Header";
-
+import Hero from "../components/sections/Hero";
+//import WeAre from "../components/sections/WeAre";
+//import Footer from "../components/Footer";
 
 export default function Home() {
-  //const [releases, setReleases] = useState([]);
-  
-
   return (
-    <div className="min-h-screen bg-[#231640] text-white overflow-x-hidden">
+    <div className="relative isolate min-h-screen overflow-x-clip text-[#231640]">
+      <Background />
       <Header />
-        <p>Hola</p>
 
-      <main className="px-6 md:px-16 py-12 flex flex-col gap-16">
-        
+      <main className="flex flex-col gap-16 px-6 py-12 md:px-16">
+        <Hero />
+    
+        {/* aquí van las demás secciones */}
       </main>
 
-    
       {/*<Footer />*/}
     </div>
   );

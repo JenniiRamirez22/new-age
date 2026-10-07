@@ -2,11 +2,93 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @font-face {
   font-family: "Nexa";
-  src: url("./assets/fonts/Nexa-Heavy-Italic.ttf") format("truetype");
+  src: url("./assets/fonts/nexa-blackitalic.ttf") format("truetype");
   font-weight: 800;
   font-style: italic;
   font-display: swap;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+:root {
+  --mx: 0;
+  --my: 0;
+}
+
+/* Fondo: aparece con desenfoque y se mueve contra el mouse */
+.app-bg {
+  transform: translate3d(calc(var(--mx) * -24px), calc(var(--my) * -24px), 0) scale(1.08);
+  transition: transform 0.2s ease-out;
+  animation: bg-in 1.6s ease-out both;
+}
+
+/* Escenario 3D del isotipo */
+.app-iso-stage {
+  perspective: 1200px;
+}
+
+/* Se inclina en 3D con el mouse */
+.app-iso-wrap {
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--mx) * 16deg)) rotateX(calc(var(--my) * -16deg)) translateZ(60px);
+  transition: transform 0.15s ease-out;
+}
+
+/* Isotipo: entra volando, luego flota */
+.app-iso {
+  filter: drop-shadow(0 25px 35px rgba(120, 67, 233, 0.35));
+  animation:
+    iso-in 1.2s cubic-bezier(0.2, 0.9, 0.3, 1.2) 0.3s both,
+    iso-float 5s ease-in-out 1.5s infinite;
+}
+
+/* Texto del Hero: aparición escalonada */
+.hero-rise {
+  animation: rise 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+@keyframes bg-in {
+  from { opacity: 0; filter: blur(12px); }
+  to   { opacity: 1; filter: blur(0); }
+}
+
+@keyframes iso-in {
+  from { opacity: 0; transform: translate3d(-30vw, 40vh, -300px) rotate(-25deg) scale(0.4); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0) rotate(0) scale(1); }
+}
+
+@keyframes iso-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-18px) rotate(1.5deg); }
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* Respeta a quienes desactivan las animaciones en su sistema */
+@media (prefers-reduced-motion: reduce) {
+  .app-bg,
+  .app-iso,
+  .hero-rise {
+    animation: none;
+  }
+  .app-bg,
+  .app-iso-wrap {
+    transition: none;
+  }
+  .app-bg {
+    transform: scale(1.08);
+  }
+  .app-iso-wrap {
+    transform: none;
+  }
 }
