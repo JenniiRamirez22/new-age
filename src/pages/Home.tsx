@@ -2,7 +2,7 @@ import Background from "../components/Background";
 import Header from "../components/Header";
 import Hero from "../components/sections/Hero";
 //import WeAre from "../components/sections/WeAre";
-//import Footer from "../components/Footer";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -16,7 +16,7 @@ export default function Home() {
         {/* aquí van las demás secciones */}
       </main>
 
-      {/*<Footer />*/}
+      <Footer />
     </div>
   );
 }

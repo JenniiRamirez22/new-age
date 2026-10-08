@@ -4,10 +4,10 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="mx-auto grid min-h-[75vh] w-full max-w-7xl items-center gap-10 lg:grid-cols-[0.85fr_1.15fr]"
+      className="relative mx-auto grid min-h-[80vh] w-full max-w-7xl grid-cols-1 lg:grid-cols-12"
     >
       {/* Columna izquierda: texto */}
-      <div className="text-center lg:text-left">
+      <div className="relative z-20 self-center text-center lg:col-span-6 lg:col-start-1 lg:row-start-1 lg:text-left">
         <p className="hero-rise font-['Nexa'] text-sm font-extrabold italic uppercase tracking-[0.3em] text-[#7843E9]">
           Escuela de voleibol
         </p>
@@ -16,7 +16,7 @@ export default function Hero() {
           className="hero-rise mt-4 font-['Nexa'] text-4xl font-extrabold italic uppercase leading-[1.05] sm:text-5xl xl:text-6xl"
           style={{ animationDelay: "0.15s" }}
         >
-          La <span className="text-[#7843E9]">nueva era</span> comienza en la {" "}
+          La <span className="text-[#7843E9]">nueva era</span> comienza en la{" "}
           <span className="relative inline-block">
             <span className="relative z-10">cancha</span>
             <span
@@ -30,8 +30,7 @@ export default function Hero() {
           className="hero-rise mx-auto mt-6 max-w-xl text-lg text-[#000000] lg:mx-0"
           style={{ animationDelay: "0.3s" }}
         >
-          Formamos grandes deportistas y mejores personas. Un espacio para
-          crecer, competir y disfrutar el voleibol.
+          Formamos grandes deportistas y mejores personas.Un espacio para crecer, competir y disfrutar el voleibol.
         </p>
 
         <div
@@ -68,16 +67,12 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Columna derecha: foto */}
-      <div
-        className="hero-rise relative w-full max-w-xl justify-self-center lg:max-w-none"
-        style={{ animationDelay: "0.3s" }}
-      >
-        <div/>
+      {/* Imagen: grande, abajo a la derecha, por debajo del texto */}
+      <div className="relative z-10 -mt-4 lg:col-span-8 lg:col-start-5 lg:row-start-1 lg:mt-0 lg:self-end">
         <img
           src={foto}
-          alt="Foto de la escuela de voleibol"
-          className="relative aspect-[3/2] w-full rounded-2xl object-cover object-[center_30%] shadow-2xl"
+          alt="Grupo de alumnos y equipo de la escuela de voleibol"
+          className="w-full drop-shadow-[0_20px_30px_rgba(35,22,64,0.25)]"
         />
       </div>
     </section>
