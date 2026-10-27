@@ -4,6 +4,7 @@ import Hero from "../components/sections/Hero";
 import WeAre from "../components/sections/WeAre";
 import Footer from "../components/Footer";
 import Categories from "../components/sections/Categories";
+import Galery from "../components/sections/Galery";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <Hero />
         <WeAre />
         <Categories />
+        <Galery />
       </main>
 
       <Footer />
