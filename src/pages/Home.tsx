@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Hero from "../components/sections/Hero";
 import WeAre from "../components/sections/WeAre";
 import Footer from "../components/Footer";
+import Categories from "../components/sections/Categories";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <main className="flex flex-col gap-16 px-6 py-12 md:px-16">
         <Hero />
         <WeAre />
+        <Categories />
       </main>
 
       <Footer />
