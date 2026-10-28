@@ -1,10 +1,10 @@
 "use client";
 
-import foto1 from "../../assets/images/carrusel/1.png";
-import foto2 from "../../assets/images/carrusel/2.png";
-import foto3 from "../../assets/images/carrusel/3.png";
-import foto4 from "../../assets/images/carrusel/4.png";
-import foto5 from "../../assets/images/carrusel/5.png";
+import foto1 from "../../assets/images/carrusel/1.webp";
+import foto2 from "../../assets/images/carrusel/2.webp";
+import foto3 from "../../assets/images/carrusel/3.webp";
+import foto4 from "../../assets/images/carrusel/4.webp";
+import foto5 from "../../assets/images/carrusel/5.webp";
 import foto6 from "../../assets/images/carrusel/6.jpg";
 import foto7 from "../../assets/images/carrusel/7.jpg";
 
