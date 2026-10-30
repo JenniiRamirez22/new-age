@@ -5,6 +5,7 @@ import WeAre from "../components/sections/WeAre";
 import Footer from "../components/Footer";
 import Categories from "../components/sections/Categories";
 import Galery from "../components/sections/Galery";
+import Contact from "../components/sections/Contact";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
         <WeAre />
         <Categories />
         <Galery />
+        <Contact />
       </main>
 
       <Footer />
