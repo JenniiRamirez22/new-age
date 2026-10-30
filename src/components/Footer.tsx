@@ -1,68 +1,110 @@
-//import React from "react";
-import { FaInstagram, FaFacebookF, FaTiktok, FaWhatsapp } from "react-icons/fa";
+import {
+  FaInstagram,
+  FaFacebookF,
+  FaTiktok,
+  FaWhatsapp,
+  FaEnvelope,
+} from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import type { IconType } from "react-icons";
+
+const EMAIL = "voleibolnewage@gmail.com";
+
+const SOCIALS: { label: string; href: string; Icon: IconType }[] = [
+  {
+    label: "Instagram",
+    href: "https://instagram.com/voleibol.newage",
+    Icon: FaInstagram,
+  },
+  {
+    label: "X (Twitter)",
+    href: "https://x.com/voleibol.newage",
+    Icon: FaXTwitter,
+  },
+  {
+    label: "TikTok",
+    href: "https://tiktok.com/@voleibol.newage",
+    Icon: FaTiktok,
+  },
+  {
+    label: "Facebook",
+    href: "https://facebook.com/voleibol.newage",
+    Icon: FaFacebookF,
+  },
+];
 
 export default function Footer() {
   return (
-    <footer className="py-7 md:py-4 text-center text-white border-t border-white/10 text-xs md:text-sm bg-[#7A22C3] flex-shrink-0">
-      <p className="mb-2 text-white font-bold tracking-wider uppercase text-xs md:text-sm">
-        Síguenos en nuestras redes sociales
-      </p>
-      
-        <div className="flex justify-center items-center gap-6 mb-6">
-          <a
-            href="https://instagram.com/voleibol.newage"
-            target="_blank"
-            rel="noreferrer"
-            className="text-white hover:text-[#F6AD38] transition-colors"
-            aria-label="Instagram"
-          >
-            <FaInstagram className="text-xl md:text-2xl" />
-          </a>
-          <a
-            href="https://x.com/voleibol.newage"
-            target="_blank"
-            rel="noreferrer"
-            className="text-white hover:text-[#F6AD38] transition-colors"
-            aria-label="X (Twitter)"
-          >
-            <FaXTwitter className="text-xl md:text-2xl" />
-          </a>
-          <a
-            href="https://tiktok.com/@voleibol.newage"
-            target="_blank"
-            rel="noreferrer"
-            className="text-white hover:text-[#F6AD38] transition-colors"
-            aria-label="TikTok"
-          >
-            <FaTiktok className="text-xl md:text-2xl" />
-          </a>
-          <a
-            href="https://facebook.com/voleibol.newage"
-            target="_blank"
-            rel="noreferrer"
-            className="text-white hover:text-[#F6AD38] transition-colors"
-            aria-label="Facebook"
-          >
-            <FaFacebookF className="text-xl md:text-2xl" />
-          </a>
-        </div>
-        <p className="mb-3 text-[#F6AD38] font-semibold tracking-wider">
-          @voleibol.newage
-        </p>
+    <footer className="flex-shrink-0 border-t border-white/10 bg-[#7A22C3] text-xs text-white md:text-sm">
+      <div className="mx-auto grid max-w-7xl gap-10 px-6 py-8 md:grid-cols-2 md:px-16">
+        {/* Columna izquierda: redes sociales */}
+        <div className="text-center md:text-left">
+          <p className="mb-4 text-xs font-bold uppercase tracking-wider md:text-sm">
+            Síguenos en nuestras redes sociales
+          </p>
 
-      <div className="flex justify-center items-center gap-2 mb-4 text-white font-medium tracking-wide">
-        <FaWhatsapp className="text-xl text-green-500" />
-        <a
-          href="https://wa.me/5804125506782"
-          target="_blank"
-          rel="noreferrer"
-          className="hover:text-[#F6AD38] transition-colors"
-        >
-          0412-5506782
-        </a>
+          <div className="mb-4 flex items-center justify-center gap-6 md:justify-start">
+            {SOCIALS.map(({ label, href, Icon }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={label}
+                className="text-white transition-colors hover:text-[#F6AD38]"
+              >
+                <Icon className="text-xl md:text-2xl" />
+              </a>
+            ))}
+          </div>
+
+          <p className="font-semibold tracking-wider text-[#F6AD38]">
+            @voleibol.newage
+          </p>
+        </div>
+
+        {/* Columna derecha: contacto */}
+        <div className="text-center md:text-right">
+          <p className="mb-4 text-xs font-bold uppercase tracking-wider md:text-sm">
+            Contáctanos
+          </p>
+
+          <ul className="space-y-3 font-medium tracking-wide">
+            <li className="flex items-center justify-center gap-2 md:justify-end">
+              <FaWhatsapp
+                aria-hidden="true"
+                className="text-xl text-green-500"
+              />
+              <a
+                href="https://wa.me/5804125506782"
+                target="_blank"
+                rel="noreferrer"
+                className="transition-colors hover:text-[#F6AD38]"
+              >
+                0412-5506782
+              </a>
+            </li>
+
+            <li className="flex items-center justify-center gap-2 md:justify-end">
+              <FaEnvelope
+                aria-hidden="true"
+                className="text-xl text-[#F6AD38]"
+              />
+              <a
+                href={`mailto:${EMAIL}`}
+                className="transition-colors hover:text-[#F6AD38]"
+              >
+                {EMAIL}
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <p>&copy; Jennifer Ramirez. 2026.</p>
+
+      {/* Copyright centrado abajo */}
+      <div className="border-t border-white/10 py-4 text-center">
+        <p>&copy; Jennifer Ramirez. 2026.</p>
+      </div>
     </footer>
   );
 }
